@@ -18,7 +18,31 @@ public class VilleBLOImpl implements VilleBLO {
 		ArrayList<Ville> listeVilles;
 		
 		listeVilles = villeDAO.findAllVilles(param);
+		
 		return listeVilles;
 	}
-
+	
+	public boolean getInfoVillePost(Ville ville) {
+		boolean villePost;
+		
+		villePost = villeDAO.postVille(ville);
+		
+		return villePost;
+	}
+	
+	public boolean getInfoVillePut(Ville villeOld, Ville villeNew) {
+		boolean villePut;
+		
+		villePut = villeDAO.putVille(villeOld, villeNew);
+		
+		return villePut;
+	}
+	
+	public boolean getInfoVilleDelete(Ville ville) {
+		boolean villeDelete;
+		
+		villeDelete = villeDAO.deleteVille(ville);
+		
+		return villeDelete;
+	}
 }

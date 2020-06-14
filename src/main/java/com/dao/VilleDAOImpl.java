@@ -16,7 +16,6 @@ public class VilleDAOImpl implements VilleDAO {
 
 	public ArrayList<Ville> findAllVilles(String param) {
 		ArrayList<Ville> listeVilles = new ArrayList<Ville>();
-		Ville ville1 = null;
 		
 		Connection con = JDBCConfiguration.getConnection();
 		
@@ -48,5 +47,58 @@ public class VilleDAOImpl implements VilleDAO {
 		   //traitement de l'exception
 		}
 		return listeVilles;
+	}
+	
+	public boolean postVille(Ville ville) {
+		boolean villePost = false;
+		
+		Connection con = JDBCConfiguration.getConnection();
+		
+		String requete = "INSERT INTO 'ville_france' ('Code_commune_INSEE', 'Nom_commune', 'Code_postal', 'Libelle_acheminement', 'Ligne_5', 'Latitude', 'Longitude') VALUES ('" + ville.getCodeCommune() + "', '" + ville.getNomCommune() + "', '" + ville.getCodePostal() + "', '" + ville.getLibelleAcheminement() + "', '" + ville.getLibelleAcheminement() + "', '" + ville.getLatitude() + "', '" + ville.getLongitude() + "');";
+
+		try {
+		   Statement stmt = con.createStatement();
+		   int results = stmt.executeUpdate(requete);
+		   villePost = (results > 0);
+		} catch (SQLException e) {
+		   //traitement de l'exception
+		}
+		return villePost;
+	}
+	
+	public boolean putVille(Ville villeOld, Ville villeNew) {
+		boolean villePut = false;
+		
+		Connection con = JDBCConfiguration.getConnection();
+		
+		String requete = "UPDATE 'ville_france' SET 'Code_commune_INSEE' = '" + villeNew.getCodeCommune() + "', 'Nom_commune' = '" + villeNew.getNomCommune() + "', 'Code_postal' = '" + villeNew.getCodePostal() + "', 'Libelle_acheminement' = '" + villeNew.getLibelleAcheminement() + "', 'Ligne_5' = '" + villeNew.getLigne() + "', 'Latitude' = '" + villeNew.getLatitude() + "', 'Longitude' = '" + villeNew.getLongitude() + "' WHERE 'Code_commune_INSEE' = '" + villeOld.getCodeCommune() + "';";
+
+		try {
+			Statement stmt = con.createStatement();
+			int results = stmt.executeUpdate(requete);
+			villePut = (results > 0);
+
+		} catch (SQLException e) {
+		   //traitement de l'exception
+		}
+		return villePut;
+	}
+	
+	public boolean deleteVille(Ville ville) {
+		boolean villeDelete = false;
+		
+		Connection con = JDBCConfiguration.getConnection();
+		
+		String requete = "DELETE FROM 'ville_france' WHERE 'Code_commune_INSEE' = '" + ville.getCodeCommune() + "';";
+
+		try {
+			Statement stmt = con.createStatement();
+			int results = stmt.executeUpdate(requete);
+			villeDelete = (results > 0);
+			
+		} catch (SQLException e) {
+		   //traitement de l'exception
+		}
+		return villeDelete;
 	}
 }

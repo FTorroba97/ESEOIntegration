@@ -8,4 +8,9 @@ public interface VilleBLO {
 
 	public ArrayList<Ville> getInfoVille(String param);
 	
+	public boolean getInfoVillePost(Ville ville);
+	
+	public boolean getInfoVillePut(Ville villeOld, Ville villeNew);
+	
+	public boolean getInfoVilleDelete(Ville ville);	
 }

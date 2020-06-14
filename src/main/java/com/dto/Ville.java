@@ -33,8 +33,22 @@ public class Ville {
 	public void setLigne(String ligne) {
 		this.ligne = ligne;
 	}
+	public String getLatitude() {
+		return latitude;
+	}
+	public void setLatitude(String latitude) {
+		this.latitude = latitude;
+	}
+	public String getLongitude() {
+		return longitude;
+	}
+	public void setLongitude(String longitude) {
+		this.longitude = longitude;
+	}
 	private String nomCommune;
 	private String codePostal;
 	private String libelleAcheminement;	
 	private String ligne;
+	private String latitude;
+	private String longitude;
 }
