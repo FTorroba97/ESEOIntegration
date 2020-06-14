@@ -10,7 +10,7 @@ public interface VilleBLO {
 	
 	public boolean getInfoVillePost(Ville ville);
 	
-	public boolean getInfoVillePut(Ville villeOld, Ville villeNew);
+	public boolean getInfoVillePut(Ville ville);
 	
 	public boolean getInfoVilleDelete(Ville ville);	
 }

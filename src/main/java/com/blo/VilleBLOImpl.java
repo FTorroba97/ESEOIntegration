@@ -30,10 +30,10 @@ public class VilleBLOImpl implements VilleBLO {
 		return villePost;
 	}
 	
-	public boolean getInfoVillePut(Ville villeOld, Ville villeNew) {
+	public boolean getInfoVillePut(Ville ville) {
 		boolean villePut;
 		
-		villePut = villeDAO.putVille(villeOld, villeNew);
+		villePut = villeDAO.putVille(ville);
 		
 		return villePut;
 	}

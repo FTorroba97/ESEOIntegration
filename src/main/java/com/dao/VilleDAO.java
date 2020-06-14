@@ -10,7 +10,7 @@ public interface VilleDAO {
 	
 	public boolean postVille(Ville ville);
 	
-	public boolean putVille(Ville villeOld, Ville New);
+	public boolean putVille(Ville ville);
 	
 	public boolean deleteVille(Ville ville);
 

@@ -45,10 +45,10 @@ class VilleController {
 	// Methode Put
 	@RequestMapping(value = "/ville", method = RequestMethod.PUT)
 	@ResponseBody
-	public boolean appelPut(@RequestBody Ville villeOld, @RequestBody Ville villeNew) {
+	public boolean appelPut(@RequestBody Ville ville) {
 		System.out.println("Appel PUT");
 		
-		boolean villePut = villeBLOService.getInfoVillePut(villeOld, villeNew);
+		boolean villePut = villeBLOService.getInfoVillePut(ville);
 		
 		return villePut;
 	}
