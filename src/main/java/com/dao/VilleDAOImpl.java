@@ -96,7 +96,6 @@ public class VilleDAOImpl implements VilleDAO {
 			int results = stmt.executeUpdate(requete);
 			villeDelete = (results > 0);
 		} catch (SQLException e) {
-		   //traitement de l'exception
 		}
 		return villeDelete;
 	}
