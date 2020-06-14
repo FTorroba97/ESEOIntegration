@@ -54,7 +54,7 @@ public class VilleDAOImpl implements VilleDAO {
 		
 		Connection con = JDBCConfiguration.getConnection();
 		
-		String requete = "INSERT INTO 'ville_france' ('Code_commune_INSEE', 'Nom_commune', 'Code_postal', 'Libelle_acheminement', 'Ligne_5', 'Latitude', 'Longitude') VALUES ('" + ville.getCodeCommune() + "', '" + ville.getNomCommune() + "', '" + ville.getCodePostal() + "', '" + ville.getLibelleAcheminement() + "', '" + ville.getLibelleAcheminement() + "', '" + ville.getLatitude() + "', '" + ville.getLongitude() + "');";
+		String requete = "INSERT INTO ville_france (Code_commune_INSEE, Nom_commune, Code_postal, Libelle_acheminement, Ligne_5, Latitude, Longitude) VALUES ('" + ville.getCodeCommune() + "', '" + ville.getNomCommune() + "', '" + ville.getCodePostal() + "', '" + ville.getLibelleAcheminement() + "', '" + ville.getLibelleAcheminement() + "', '" + ville.getLatitude() + "', '" + ville.getLongitude() + "');";
 
 		try {
 		   Statement stmt = con.createStatement();
@@ -71,7 +71,7 @@ public class VilleDAOImpl implements VilleDAO {
 		
 		Connection con = JDBCConfiguration.getConnection();
 		
-		String requete = "UPDATE 'ville_france' SET 'Code_commune_INSEE' = '" + villeNew.getCodeCommune() + "', 'Nom_commune' = '" + villeNew.getNomCommune() + "', 'Code_postal' = '" + villeNew.getCodePostal() + "', 'Libelle_acheminement' = '" + villeNew.getLibelleAcheminement() + "', 'Ligne_5' = '" + villeNew.getLigne() + "', 'Latitude' = '" + villeNew.getLatitude() + "', 'Longitude' = '" + villeNew.getLongitude() + "' WHERE 'Code_commune_INSEE' = '" + villeOld.getCodeCommune() + "';";
+		String requete = "UPDATE ville_france SET Code_commune_INSEE = '" + villeNew.getCodeCommune() + "', Nom_commune = '" + villeNew.getNomCommune() + "', Code_postal = '" + villeNew.getCodePostal() + "', Libelle_acheminement = '" + villeNew.getLibelleAcheminement() + "', Ligne_5 = '" + villeNew.getLigne() + "', Latitude = '" + villeNew.getLatitude() + "', Longitude = '" + villeNew.getLongitude() + "' WHERE Code_commune_INSEE = '" + villeOld.getCodeCommune() + "';";
 
 		try {
 			Statement stmt = con.createStatement();
@@ -89,7 +89,7 @@ public class VilleDAOImpl implements VilleDAO {
 		
 		Connection con = JDBCConfiguration.getConnection();
 		
-		String requete = "DELETE FROM 'ville_france' WHERE 'Code_commune_INSEE' = '" + ville.getCodeCommune() + "';";
+		String requete = "DELETE FROM ville_france WHERE Code_commune_INSEE = '" + ville.getCodeCommune() + "';";
 
 		try {
 			Statement stmt = con.createStatement();
