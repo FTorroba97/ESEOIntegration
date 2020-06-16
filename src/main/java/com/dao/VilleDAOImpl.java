@@ -39,6 +39,8 @@ public class VilleDAOImpl implements VilleDAO {
 			   ville.setCodePostal(results.getString(3));
 			   ville.setLibelleAcheminement(results.getString(4));
 			   ville.setLigne(results.getString(5));
+			   ville.setLatitude(results.getString(6));
+			   ville.setLongitude(results.getString(7));
 			   listeVilles.add(ville);
 			   System.out.println("rep : " + results.getString("Nom_commune"));
 		   }

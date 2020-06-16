@@ -3,6 +3,7 @@ package com.controller;
 import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -21,6 +22,7 @@ class VilleController {
 	VilleBLO villeBLOService;
 
 	// Methode GET
+	@CrossOrigin
 	@RequestMapping(value = "/ville", method = RequestMethod.GET)
 	@ResponseBody
 	public ArrayList<Ville> appelGet(@RequestParam(required=false, value="codePostal") String nomParam) {
@@ -32,6 +34,7 @@ class VilleController {
 	}
 	
 	// Methode POST
+	@CrossOrigin
 	@RequestMapping(value = "/ville", method = RequestMethod.POST)
 	@ResponseBody
 	public boolean appelPost(@RequestBody Ville ville) {
@@ -43,6 +46,7 @@ class VilleController {
 	}
 	
 	// Methode Put
+	@CrossOrigin
 	@RequestMapping(value = "/ville", method = RequestMethod.PUT)
 	@ResponseBody
 	public boolean appelPut(@RequestBody Ville ville) {
@@ -54,6 +58,7 @@ class VilleController {
 	}
 		
 	// Methode Delete
+	@CrossOrigin
 	@RequestMapping(value = "/ville", method = RequestMethod.DELETE)
 	@ResponseBody
 	public boolean appelDelete(@RequestBody Ville ville) {
